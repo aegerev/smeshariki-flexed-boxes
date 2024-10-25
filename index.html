@@ -19,11 +19,17 @@
     </header>
 
     <nav>
-      <a href="https://www.youtube.com/playlist?list=PLN77dVV1fKqsRkYO9Wel9w_xJPCLSZpA3">Smeshariki 2D Episodes</a>
-      <a href="https://www.youtube.com/playlist?list=PLdTBBPi7IKFzjZH8DimgFFvmvL3TheohJ">Smeshariki 3D Episodes</a>
-      <a href="https://www.youtube.com/playlist?list=PL5CTLqz7wEOf_B85kf0CXoGDyvU-blq_3">Smeshariki: PinKod Episodes</a>
-      <a href="https://www.youtube.com/watch?v=1vBgKm9qhhM">The Latest Smeshariki Movie</a>
+      <a href="./html/smeshariki2D.html">Smeshariki 2D Episodes</a>
+      <a href="./html/smeshariki3D.html">Smeshariki 3D Episodes</a>
+      <a href="./html/smeshariki-pinkod.html">Smeshariki: PinKod Episodes</a>
+      <a href="./html/smeshariki-movie.html">The Latest Smeshariki Movie</a>
     </nav>
+
+
+      <h2>Click the Nav Tabs to see the top episodes!</h2>
+
+
+
 
     <div class="product-slideshow">
 
@@ -33,6 +39,7 @@
       <div class="slide"></div>
         <div>
           <img class="product-image" src="./assets/images/umbrella-episode.jpg" alt="broken umbrella" />
+          <img class="product-image" src="./assets/images/train-station-friends.jpg" alt="broken umbrella" />
         </div>
 
         <button onClick="nextSlide()">&gt;</button>
@@ -46,93 +53,6 @@
         </div>
       </section> 
 
-      <script>
-        let slides = document.querySelectorAll('.product-slideshow.slide');
-        const productDetails = document.querySelector('.product-details');
-        let currentSlideIndex = 0;
-
-        let slideData = [
-          {
-              image: './assets/images/umbrella-episode.jpg',
-              title: 'Memoirs of an Umbrella',
-              description: 'Each of us has things in life... Barash also had such a thing - an old umbrella...',
-          }, 
-
-          {
-              image: './assets/images/train-station-friends.jpg',
-              title: 'One-Way Ticket',
-              description: 'The discovery of railways in the valley becomes a real event. But very quickly all the routes become known and uninteresting. Then Krosh decides to change everything! He buys a one-way ticket...',
-          }, 
-
-          {
-              image: './assets/images/krosh-carrot.jpg',
-              title: 'Teleporters',
-              description: 'Pin and Losyash are always constructing and inventing something, and one day everyone gathered to watch their latest experiment. But no one could have imagined that even the teleportation device would have to be protected from Krosh - he did not fully understand this experiment and decided to test the wonders of technology on himself!',
-          }, 
-
-          {
-              image: './assets/images/dejavu.jpg',
-              title: 'Smeshariki. DejaVu',
-              description: 'Krosh wants to throw his best buddy Kopatych an unforgettable birthday party. He hires the DejaVu Agency, which organizes exciting time travel adventures. But the Kikoriki crew fail to follow the rules and the group is scattered across time.',
-          }
-      ]
-
-function previousSlide() {
-    if(currentSlideIndex > 0) {
-        currentSlideIndex--;
-
-        let previousSlideData = slideData[currentSlideIndex];
-
-        let productImage = document.querySelector('.product-image');
-        productImage.src = previousSlideData.image;
-        
-        productDetails.querySelector('.product-details h2').textContent = previousSlideData.title;
-        productDetails.querySelector('.product-details p').textContent = previousSlideData.description;
-        
-        slides[currentSlideIndex + 1].classList.remove('active');
-        slides[currentSlideIndex].classList.add('active');
-    }
-}
-
-function previousSlide() {
-  if (currentSlideIndex > 0) {
-    currentSlideIndex--;
-
-    const previousSlideData = slideData[currentSlideIndex];
-
-    const productImage = document.querySelector('.product-image');
-    productImage.src = previousSlideData.image;
-
-    productDetails.querySelector('product-details h2').textContent = previousSlideData.title;
-    productDetails.querySelector('product-details p').textContent = previousSlideData.description;
-
-    slides[currentSlideIndex + 1].classList.remove('active');
-    slides[currentSlideIndex].classList.add('active');
-  }
-}
-
-function nextSlide() {
-  if (currentSlideIndex < slides.length - 1) {
-    // Update current slide index
-    currentSlideIndex++;
-
-    // Get data for the new slide
-    const currentSlideData = slideData[currentSlideIndex];
-
-    // Update image
-    const productImage = document.querySelector('.product-image');
-    productImage.src = currentSlideData.image;
-
-    // Update text content
-    productDetails.querySelector('h2').textContent = currentSlideData.title;
-    productDetails.querySelector('p').textContent = currentSlideData.description;
-
-    // Remove active class from previous slide, add to current slide
-    slides[currentSlideIndex - 1].classList.remove('active');
-    slides[currentSlideIndex].classList.add('active');
-  }
-}
-      </script>
   </body>
 
   </html>   
